@@ -9,6 +9,7 @@ import {
   Alert,
 } from "react-native";
 
+import NumberComponent from "../components/NumberContainer";
 import Card from "../components/Card.js";
 import Colors from "../constants/Colors.js";
 import Input from "../components/Input.js";
@@ -37,15 +38,22 @@ const StartGameScreen = (props) => {
         [{ text: "Okay", style: "destructive", onPress: resetInputHandler }]
       );
       return;
-    };
+    }
     setConfirmed(true);
     setSelectedNumber(parseInt(enteredValue));
     setEndteredValue("");
+    Keyboard.dismiss();
   };
 
   let confirmedOutput;
   if (confirmed) {
-    confirmedOutput = <Text>Chosen Number: {selectedNumber}</Text>
+    confirmedOutput = (
+      <Card style={styles.summaryContainer}>
+        <Text>You selected</Text>
+        <NumberComponent>{selectedNumber}</NumberComponent>
+        <Button title="Start Game" />
+      </Card>
+    );
   }
 
   return (
@@ -117,6 +125,10 @@ const styles = StyleSheet.create({
   input: {
     width: 50,
     textAlign: "center",
+  },
+  summaryContainer: {
+    marginTop: 20,
+    alignItems: "center",
   },
 });
 
