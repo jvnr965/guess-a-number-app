@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import Colors from '../constants/Colors.js';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import Colors from "../constants/Colors.js";
 
-const Header = props => {
+const Header = (props) => {
   return (
     <View style={styles.header}>
       <Text style={styles.headerTitle}>{props.title}</Text>
@@ -19,9 +19,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headerTitle: {
-    color: 'black',
-    fontSize: 18
-  }
+    color: "black",
+    fontSize: 18,
+  },
 });
 
 export default Header;
