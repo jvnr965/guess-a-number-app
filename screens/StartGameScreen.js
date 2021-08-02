@@ -9,6 +9,8 @@ import {
   Alert,
 } from "react-native";
 
+import TitleText from "../components/TitleText";
+import BodyText from "../components/BodyText";
 import NumberContainer from "../components/NumberContainer";
 import Card from "../components/Card.js";
 import Colors from "../constants/Colors.js";
@@ -66,9 +68,9 @@ const StartGameScreen = (props) => {
       }}
     >
       <View style={styles.screen}>
-        <Text style={styles.title}>The Game Screen!</Text>
+        <TitleText style={styles.title}>Start a New Game!</TitleText>
         <Card style={styles.inputContainer}>
-          <Text>Select a Number</Text>
+          <BodyText>Select a Number</BodyText>
           <Input
             style={styles.input}
             blurOnSubmit
