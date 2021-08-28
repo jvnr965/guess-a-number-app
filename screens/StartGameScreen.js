@@ -7,6 +7,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   Alert,
+  Dimensions,
 } from "react-native";
 
 import TitleText from "../components/TitleText";
@@ -122,12 +123,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   inputContainer: {
-    width: 300,
-    maxWidth: "80%",
+    width: '80%',
+    maxWidth:'95%',
+    minWidth: 300,
     alignItems: "center",
   },
   button: {
-    width: "40%",
+    width: Dimensions.get("window").width / 4
   },
   input: {
     width: 50,
